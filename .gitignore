@@ -59,3 +59,4 @@ typings/
 *.min.js
 .history
 .out
+DragonBones\out
