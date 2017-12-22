@@ -58,3 +58,4 @@ typings/
 .env
 *.min.js
 .history
+.out
