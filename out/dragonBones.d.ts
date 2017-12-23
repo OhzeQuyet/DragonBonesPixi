@@ -7608,3 +7608,6 @@ declare namespace dragonBones {
         static readonly clock: WorldClock;
     }
 }
+declare const exports: any;
+
+export namespace dragonBones { }
