@@ -7368,6 +7368,8 @@ declare namespace dragonBones {
          * @inheritDoc
          */
         removeEvent(type: EventStringType, listener: (event: EventObject) => void, target: any): void;
+        readonly width: number;
+        readonly height: number;
     }
 }
 /**
@@ -7610,4 +7612,4 @@ declare namespace dragonBones {
 }
 declare const exports: any;
 
-export namespace dragonBones { }
+export namespace dragonBones {}

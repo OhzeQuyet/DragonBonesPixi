@@ -13604,6 +13604,37 @@ var dragonBones;
         PixiArmatureDisplay.prototype.removeEvent = function (type, listener, target) {
             this.removeDBEventListener(type, listener, target);
         };
+        Object.defineProperty(PixiArmatureDisplay.prototype, "width", {
+            // Todo: Test getters
+            get: function () {
+                var width = 1;
+                if (this.armature.armatureData.defaultSkin && this.armature.armatureData.defaultSkin.displays) {
+                    var properties = Object.getOwnPropertyNames(this.armature.armatureData.defaultSkin.displays);
+                    var Data = this.armature.armatureData.defaultSkin.displays[properties[0]][0];
+                    if (Data && Data.texture && Data.texture.frame) {
+                        width = Data.texture.frame.width;
+                    }
+                }
+                return width;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(PixiArmatureDisplay.prototype, "height", {
+            get: function () {
+                var height = 1;
+                if (this.armature.armatureData.defaultSkin && this.armature.armatureData.defaultSkin.displays) {
+                    var properties = Object.getOwnPropertyNames(this.armature.armatureData.defaultSkin.displays);
+                    var Data = this.armature.armatureData.defaultSkin.displays[properties[0]][0];
+                    if (Data && Data.texture && Data.texture.frame) {
+                        height = Data.texture.frame.height;
+                    }
+                }
+                return height;
+            },
+            enumerable: true,
+            configurable: true
+        });
         return PixiArmatureDisplay;
     }(PIXI.Sprite));
     dragonBones.PixiArmatureDisplay = PixiArmatureDisplay;

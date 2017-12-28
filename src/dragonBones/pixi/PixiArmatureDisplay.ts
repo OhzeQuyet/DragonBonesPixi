@@ -223,5 +223,28 @@ namespace dragonBones {
         public removeEvent(type: EventStringType, listener: (event: EventObject) => void, target: any): void {
             this.removeDBEventListener(type, listener, target);
         }
+        // Todo: Test getters
+        public get width(): number {
+            let width = 1
+            if (this.armature.armatureData.defaultSkin && this.armature.armatureData.defaultSkin.displays) {
+                const properties = Object.getOwnPropertyNames(this.armature.armatureData.defaultSkin.displays)
+                const Data = <ImageDisplayData>this.armature.armatureData.defaultSkin.displays[properties[0]][0]
+                if (Data && Data.texture && Data.texture.frame) {   
+                    width = Data.texture.frame.width
+                }
+            }
+            return width
+        }
+        public get height(): number {
+            let height = 1
+            if (this.armature.armatureData.defaultSkin && this.armature.armatureData.defaultSkin.displays) {
+                const properties = Object.getOwnPropertyNames(this.armature.armatureData.defaultSkin.displays)
+                const Data = <ImageDisplayData>this.armature.armatureData.defaultSkin.displays[properties[0]][0]
+                if (Data && Data.texture && Data.texture.frame) {
+                    height = Data.texture.frame.height
+                }
+            }
+            return height
+        }
     }
 }
