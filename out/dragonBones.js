@@ -13611,8 +13611,13 @@ var dragonBones;
                 if (this.armature.armatureData.defaultSkin && this.armature.armatureData.defaultSkin.displays) {
                     var properties = Object.getOwnPropertyNames(this.armature.armatureData.defaultSkin.displays);
                     var Data = this.armature.armatureData.defaultSkin.displays[properties[0]][0];
-                    if (Data && Data.texture && Data.texture.region) {
-                        width = Data.texture.region.width;
+                    if (Data && Data.texture) {
+                        if (Data.texture.frame) {
+                            width = Data.texture.frame.width;
+                        }
+                        else if (Data.texture.region) {
+                            width = Data.texture.region.width;
+                        }
                     }
                 }
                 return width;
@@ -13626,8 +13631,13 @@ var dragonBones;
                 if (this.armature.armatureData.defaultSkin && this.armature.armatureData.defaultSkin.displays) {
                     var properties = Object.getOwnPropertyNames(this.armature.armatureData.defaultSkin.displays);
                     var Data = this.armature.armatureData.defaultSkin.displays[properties[0]][0];
-                    if (Data && Data.texture && Data.texture.region) {
-                        height = Data.texture.region.height;
+                    if (Data && Data.texture) {
+                        if (Data.texture.frame) {
+                            height = Data.texture.frame.height;
+                        }
+                        else if (Data.texture.region) {
+                            height = Data.texture.region.height;
+                        }
                     }
                 }
                 return height;
