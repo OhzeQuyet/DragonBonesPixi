@@ -229,8 +229,8 @@ namespace dragonBones {
             if (this.armature.armatureData.defaultSkin && this.armature.armatureData.defaultSkin.displays) {
                 const properties = Object.getOwnPropertyNames(this.armature.armatureData.defaultSkin.displays)
                 const Data = <ImageDisplayData>this.armature.armatureData.defaultSkin.displays[properties[0]][0]
-                if (Data && Data.texture && Data.texture.frame) {   
-                    width = Data.texture.frame.width
+                if (Data && Data.texture && Data.texture.region) {   
+                    width = Data.texture.region.width
                 }
             }
             return width
@@ -240,8 +240,8 @@ namespace dragonBones {
             if (this.armature.armatureData.defaultSkin && this.armature.armatureData.defaultSkin.displays) {
                 const properties = Object.getOwnPropertyNames(this.armature.armatureData.defaultSkin.displays)
                 const Data = <ImageDisplayData>this.armature.armatureData.defaultSkin.displays[properties[0]][0]
-                if (Data && Data.texture && Data.texture.frame) {
-                    height = Data.texture.frame.height
+                if (Data && Data.texture && Data.texture.region) {
+                    height = Data.texture.region.height
                 }
             }
             return height
