@@ -13610,13 +13610,19 @@ var dragonBones;
                 var width = 1;
                 if (this.armature.armatureData.defaultSkin && this.armature.armatureData.defaultSkin.displays) {
                     var properties = Object.getOwnPropertyNames(this.armature.armatureData.defaultSkin.displays);
-                    var Data = this.armature.armatureData.defaultSkin.displays[properties[0]][0];
-                    if (Data && Data.texture) {
-                        if (Data.texture.frame) {
-                            width = Data.texture.frame.width;
-                        }
-                        else if (Data.texture.region) {
-                            width = Data.texture.region.width;
+                    var Aabb = this.armature.armatureData.aabb;
+                    if (Aabb.width > 0) {
+                        width = Aabb.width;
+                    }
+                    else {
+                        var Data = this.armature.armatureData.defaultSkin.displays[properties[0]][0];
+                        if (Data && Data.texture) {
+                            if (Data.texture.frame) {
+                                width = Data.texture.frame.width;
+                            }
+                            else if (Data.texture.region) {
+                                width = Data.texture.region.width;
+                            }
                         }
                     }
                 }
@@ -13630,13 +13636,19 @@ var dragonBones;
                 var height = 1;
                 if (this.armature.armatureData.defaultSkin && this.armature.armatureData.defaultSkin.displays) {
                     var properties = Object.getOwnPropertyNames(this.armature.armatureData.defaultSkin.displays);
-                    var Data = this.armature.armatureData.defaultSkin.displays[properties[0]][0];
-                    if (Data && Data.texture) {
-                        if (Data.texture.frame) {
-                            height = Data.texture.frame.height;
-                        }
-                        else if (Data.texture.region) {
-                            height = Data.texture.region.height;
+                    var Aabb = this.armature.armatureData.aabb;
+                    if (Aabb.height > 0) {
+                        height = Aabb.height;
+                    }
+                    else {
+                        var Data = this.armature.armatureData.defaultSkin.displays[properties[0]][0];
+                        if (Data && Data.texture) {
+                            if (Data.texture.frame) {
+                                height = Data.texture.frame.height;
+                            }
+                            else if (Data.texture.region) {
+                                height = Data.texture.region.height;
+                            }
                         }
                     }
                 }
