@@ -11,5 +11,8 @@
     "typescript": "^2.4.2",
     "uglify-js": "^3.0.26"
   },
-  "types": "./out/dragonBones.d.ts"
+  "types": "./out/dragonBones.d.ts",
+  "dependencies": {
+    "@types/pixi.js": "^4.6.2"
+  }
 }
